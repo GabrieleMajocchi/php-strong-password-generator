@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+$password = $_SESSION['password'];
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +15,6 @@ session_start();
 </head>
 <body>
         <h2>Password generata:</h2>
-        <p><?php echo $_SESSION['password']; ?></p>
+        <p><?php echo $password;?></p>
 </body>
 </html>
