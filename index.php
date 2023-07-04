@@ -7,7 +7,9 @@ include_once __DIR__ . "/functions.php";
 if (isset($_GET['length'])) {
     $length = intval($_GET['length']);
     $password = getRandomPassword($length);
-    $_SESSION['password'] = $password;
+    $_SESSION['password'] = $password; 
+    header('Location: passwordgen.php');
+    exit();
 }
 ?>
 
@@ -23,7 +25,7 @@ if (isset($_GET['length'])) {
 <body>
     <h1>Strong password generator:</h1>
 
-    <form method="GET" action="./passwordgen.php">
+    <form method="GET" action="">
         <label for="length">Length of password:</label>
         <input type="number" name="length" id="length" value="" placeholder="Minimum 4" required min="4">
         <input type="submit" value="Generate password">
